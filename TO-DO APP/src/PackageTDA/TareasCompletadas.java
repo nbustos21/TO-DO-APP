@@ -1,8 +1,12 @@
 package PackageTDA;
 
+import java.util.*;
+import java.io.*;
+import PackageTDA.tareas;
+
 public class TareasCompletadas {
 
-	public static void main(String[] args) {
+	public static void TareasCompletadas() {
 		
 
 	}

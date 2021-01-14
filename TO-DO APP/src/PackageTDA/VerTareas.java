@@ -5,13 +5,19 @@ import java.util.*;
 
 public class VerTareas {
 
-	public static void main(String[] args) {
+	public static void VerTareas() {
 		try {
-			File myFile = new File("C:\\Users\\Nico\\eclipse-workspace\\TO-DO APP\\src\\PackageTDA\\TDA.txt");
-			Scanner sc = new Scanner(myFile);
-			while(sc.hasNextLine()) {
-				String datos = sc.nextLine();
-				System.out.println(datos);
+			File LeerTP = new File("src\\PackageTDA\\LeerTP.txt");
+			Scanner tp = new Scanner(LeerTP);
+			while(tp.hasNextLine()) {
+				String datos2 = tp.nextLine();
+				System.out.println(datos2);
+			}
+			File LeerTC = new File("src\\PackageTDA\\LeerTC.txt");
+			Scanner tc = new Scanner(LeerTC);
+			while(tc.hasNextLine()) {
+				String datos1 = tc.nextLine();
+				System.out.println(datos1);
 			}
 			
 		}catch (FileNotFoundException e) {
@@ -19,6 +25,6 @@ public class VerTareas {
 			e.printStackTrace();	
 		}
 
-	}
+	} 
 
 }
