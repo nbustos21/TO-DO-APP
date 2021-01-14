@@ -8,9 +8,10 @@ import PackageTDA.*;
 
 public class main {
 
+	public static tareas[] tasks=new tareas[50];
+	public static int noTareas = 0;
 	public static void main(String[] args) {
 		
-		String TDA = "C:\\Users\\Nico\\eclipse-workspace\\TO-DO APP\\src\\PackageTDA\\TDA.txt";
 		Scanner inicio = new Scanner(System.in);
 		System.out.println("\tBienvenido al administrador de tareas.");
 		
@@ -26,14 +27,15 @@ public class main {
 		int opcion = inicio.nextInt();
 		inicio.nextLine();
 		
+		
 		switch (opcion) {
 		
 		case 1:
 			TareasPendientes.TareasPendientes();
-				break;
+			break;
 		case 2:
 			TareasCompletadas.TareasCompletadas();
-			 break;
+			break;
 		case 3:
 			VerTareas.VerTareas();
 			break;
@@ -41,10 +43,40 @@ public class main {
 			System.out.println("\nHasta la próxima mi pana");
 			 funcionar = false;
 			 break;
+			}
+
 		}
 
 	}
-
-}
+	
+	private static void leerArchivo() {
+		Scanner tda;
+		try {
+			File LeerTDA = new File("src\\PackageTDA\\TDA.txt");
+			tda = new Scanner(LeerTDA);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		while(tda.hasNextLine()) {
+			String datos = tda.nextLine();
+			//Falta ir generando Tareas
+			String titulo = datos.split("_")[0];
+			Date fecha = datos.split("_")[1];
+			System.out.println(datos);
+			tasks[noTareas++] = new Tarea(titulo,fecha,estado);
+		}
+	}
+	
+	private static void escribirArchivo() {
+		
+	}
+	
+	private static void crearTarea() {
+		
+	}
+	
+	private static void completarTarea() {
+		
+	}
 	
 }

@@ -7,17 +7,11 @@ public class VerTareas {
 
 	public static void VerTareas() {
 		try {
-			File LeerTP = new File("src\\PackageTDA\\LeerTP.txt");
-			Scanner tp = new Scanner(LeerTP);
-			while(tp.hasNextLine()) {
-				String datos2 = tp.nextLine();
+			File LeerTDA = new File("src\\PackageTDA\\TDA.txt");
+			Scanner tda = new Scanner(LeerTDA);
+			while(tda.hasNextLine()) {
+				String datos2 = tda.nextLine();
 				System.out.println(datos2);
-			}
-			File LeerTC = new File("src\\PackageTDA\\LeerTC.txt");
-			Scanner tc = new Scanner(LeerTC);
-			while(tc.hasNextLine()) {
-				String datos1 = tc.nextLine();
-				System.out.println(datos1);
 			}
 			
 		}catch (FileNotFoundException e) {
